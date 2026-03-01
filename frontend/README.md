@@ -1,36 +1,150 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend Architecture
 
-## Getting Started
+The frontend provides the user interface for interacting with the
+platform. It exposes a modern web dashboard allowing users to manage
+infrastructure resources, monitor systems, and interact with the backend
+API.
 
-First, run the development server:
+The interface is designed to be simple, responsive, and
+developer-friendly while maintaining a scalable architecture.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+------------------------------------------------------------------------
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Overview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The frontend is responsible for:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+-   providing the user dashboard
+-   communicating with the backend API
+-   displaying infrastructure status and metrics
+-   allowing users to manage resources (VPS, services, etc.)
+-   handling authentication flows
 
-## Learn More
+The frontend communicates exclusively with the backend through REST
+APIs.
 
-To learn more about Next.js, take a look at the following resources:
+------------------------------------------------------------------------
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Key Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+-   Modern dashboard interface
+-   API-driven architecture
+-   Authentication handling
+-   Resource monitoring interface
+-   Infrastructure management UI
+-   Responsive design
+-   Modular component system
 
-## Deploy on Vercel
+------------------------------------------------------------------------
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Technology Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Frontend technologies used in this project:
+
+-   Next.js
+-   React
+-   JavaScript / TypeScript
+-   Tailwind CSS
+-   REST API integration
+
+------------------------------------------------------------------------
+
+# Project Structure
+
+frontend/
+
+app/ components/ layouts/ pages/ services/ hooks/ utils/ styles/
+
+public/
+
+package.json next.config.js
+
+------------------------------------------------------------------------
+
+# Architecture
+
+The frontend follows a modular architecture where UI components,
+business logic, and API communication are clearly separated.
+
+Typical architecture flow:
+
+Browser \| v Next.js Application \| v API Service Layer \| v Backend
+REST API
+
+------------------------------------------------------------------------
+
+# API Communication
+
+All communication with the backend is handled through a dedicated
+service layer.
+
+Example structure:
+
+services/ api.js auth.js infrastructure.js
+
+Responsibilities:
+
+-   sending HTTP requests
+-   handling authentication tokens
+-   normalizing API responses
+-   managing error handling
+
+------------------------------------------------------------------------
+
+# UI Components
+
+Reusable components are stored inside the components directory.
+
+Example:
+
+components/ Button/ Card/ Dashboard/ VPSList/
+
+This allows consistent UI patterns and easier maintenance.
+
+------------------------------------------------------------------------
+
+# Pages and Routing
+
+The application uses Next.js routing.
+
+Example pages:
+
+/login /dashboard /vps /settings
+
+Each page interacts with the backend API to retrieve and display data.
+
+------------------------------------------------------------------------
+
+# State Management
+
+State is managed locally through React hooks and context when necessary.
+
+Typical responsibilities:
+
+-   storing authentication state
+-   managing UI interactions
+-   handling loading and error states
+
+------------------------------------------------------------------------
+
+# Design Principles
+
+The frontend follows several design principles:
+
+-   clear separation between UI and data logic
+-   reusable component architecture
+-   API-driven design
+-   scalable project structure
+-   predictable user experience
+
+------------------------------------------------------------------------
+
+# Future Improvements
+
+Potential future improvements include:
+
+-   advanced dashboard analytics
+-   real-time monitoring (WebSockets)
+-   role-based UI permissions
+-   improved infrastructure visualization
+-   notification system

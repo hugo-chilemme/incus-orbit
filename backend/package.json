@@ -1,0 +1,33 @@
+{
+  "name": "cvodex-auto-routing-api",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Express API template with folder auto-routing, versioning, and hierarchical layout middlewares.",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "dev:log": "mkdir -p logs && nodemon src/server.js 2>&1 | tee logs/dev.log",
+    "start": "node src/server.js",
+    "start:log": "mkdir -p logs && node src/server.js 2>&1 | tee logs/start.log",
+    "check": "npm run syntax",
+    "syntax": "node --check src/server.js && node --check src/app.js && node --check src/core/autoLoader.js && node --check src/api/v1/layout.js && node --check src/api/v1/auth/layout.js && node --check src/api/v1/auth/register/post.js && node --check src/api/v1/auth/login/post.js && node --check src/api/v1/users/get.js && node --check src/api/v1/users/post.js && node --check src/api/v1/users/[id]/get.js && node --check src/api/v1/cv/get.js && node --check src/api/v1/cv/post.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^4.21.2",
+    "module-alias": "^2.2.2",
+    "mongodb": "^7.1.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "_moduleAliases": {
+    "@root": "src",
+    "@core": "src/core",
+    "@api": "src/api",
+    "@lib": "src/lib"
+  }
+}

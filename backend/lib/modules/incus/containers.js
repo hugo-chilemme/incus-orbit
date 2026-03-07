@@ -120,3 +120,75 @@ export const stats = async (name) => {
 export const stop = async (name) => {
 	return execute(`${COMMAND} stop ${name}`);
 };
+
+
+/**
+ * Pause a container.
+ * @param {string} name - Container name.
+ * @returns {Promise<any>}
+ */
+export const pause = async (name) => {
+	return execute(`${COMMAND} pause ${name}`);
+};
+
+/**
+ * Resume a container.
+ * @param {string} name - Container name.
+ * @returns {Promise<any>}
+ */
+export const resume = async (name) => {
+	return execute(`${COMMAND} resume ${name}`);
+};
+
+/**
+ * Rename a container.
+ * @param {string} name - Current container name.
+ * @param {string} newName - New container name.
+ * @returns {Promise<any>}
+ */
+export const rename = async (name, newName) => {
+	return execute(`${COMMAND} rename ${name} ${newName}`);
+};
+
+/**
+ * Clone a container.
+ * @param {string} name - Source container name.
+ * @param {string} newName - New container name.
+ * @returns {Promise<any>}
+ */
+export const clone = async (name, newName) => {
+	return execute(`${COMMAND} copy ${name} ${newName}`);
+};
+
+/**
+ * Update container config.
+ * @param {string} name - Container name.
+ * @param {object} config - Config object.
+ * @returns {Promise<any>}
+ */
+export const updateConfig = async (name, config) => {
+	const configArgs = Object.entries(config)
+		.map(([key, value]) => `--config ${key}=${value}`)
+		.join(" ");
+	return execute(`${COMMAND} config set ${name} ${configArgs}`);
+};
+
+/**
+ * Update container devices.
+ * @param {string} name - Container name.
+ * @param {object} devices - Devices object.
+ * @returns {Promise<any>}
+ */
+export const updateDevices = async (name, devices) => {
+	const deviceArgs = Object.entries(devices)
+		.map(([dev, opts]) => {
+			const type = opts.type ? ` ${opts.type}` : "";
+			const options = Object.entries(opts)
+				.filter(([k]) => k !== "type")
+				.map(([k, v]) => `${k}=${v}`)
+				.join(" ");
+			return `device add ${name} ${dev}${type} ${options}`;
+		})
+		.join(" && ");
+	return execute(`${COMMAND} ${deviceArgs}`);
+};

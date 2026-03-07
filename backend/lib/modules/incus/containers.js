@@ -21,15 +21,23 @@ export const info = async (name) => {
 	return execute(`${COMMAND} query /1.0/instances/${name}`);
 };
 
-
 /**
  * Create a new container from an image.
  * @param {string} image - Image name (ex: ubuntu/22.04).
  * @param {string} name - Name of the container to create.
+ * @param {string} profile - Optional profile to apply to the container.
+ * @param {object} [config={}] - Optional configuration options (key-value pairs).
  * @returns {Promise<object>} Information about the created container.
  */
-export const launch = async (image, name) => {
-	await execute(`${COMMAND} launch ${image} ${name}`);
+export const launch = async (image, name, profile = "default", config = {}) => {
+	let configArgs = "";
+	if (config && typeof config === "object" && Object.keys(config).length > 0) {
+		// Convert config object to CLI arguments: --config key=value
+		configArgs = Object.entries(config)
+			.map(([key, value]) => `--config ${key}=${value}`)
+			.join(" ");
+	}
+	await execute(`${COMMAND} launch ${configArgs} ${image} ${name} --profile ${profile}`);
 	return info(name);
 };
 

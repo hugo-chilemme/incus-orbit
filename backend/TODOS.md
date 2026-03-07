@@ -8,13 +8,13 @@
 
 **Query parameters**
 
-  Paramètre   Description
-  ----------- ---------------------------------------------------
-  `name`      filtre par nom (partiel)
-  `status`    filtre par statut (`Running` / `Stopped`)
-  `type`      filtre par type (`container` / `virtual-machine`)
-  `profile`   filtre par profil (ex: `default`)
-  `ip`        filtre par adresse IP (partielle)
+  | Paramètre | Description |
+  |-----------|---------------------------------------------------|
+  | `name`    | filtre par nom (partiel)                          |
+  | `status`  | filtre par statut (`Running` / `Stopped`)         |
+  | `type`    | filtre par type (`container` / `virtual-machine`) |
+  | `profile` | filtre par profil (ex: `default`)                 |
+  | `ip`      | filtre par adresse IP (partielle)                 |
 
 **Fonctionnalités**
 

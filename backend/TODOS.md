@@ -187,17 +187,6 @@ Permet d'effectuer différentes actions sur un container (démarrer, arrêter, r
 
 ------------------------------------------------------------------------
 
-# Lifecycle Container
-
--   [ ] démarrer un container
--   [ ] arrêter un container
--   [ ] redémarrer un container
--   [ ] forcer l'arrêt d'un container
--   [ ] mettre en pause un container
--   [ ] reprendre un container
-
-------------------------------------------------------------------------
-
 # Configuration Container
 
 ## Configuration

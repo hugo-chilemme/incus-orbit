@@ -6,6 +6,7 @@ import * as networks from "./incus/networks.js";
 import * as storage from "./incus/storage.js";
 import * as volumes from "./incus/volumes.js";
 import * as snapshots from "./incus/snapshots.js";
+import * as devices from "./incus/devices.js";
 
 export default {
 	containers: containers,
@@ -16,4 +17,5 @@ export default {
 	storage: storage,
 	volumes: volumes,
 	snapshots: snapshots,
+	devices: devices
 };

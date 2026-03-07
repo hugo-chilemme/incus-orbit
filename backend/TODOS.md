@@ -6,6 +6,9 @@
 
     GET /api/v1/containers
 
+**Description**
+Récupère la liste des containers avec leurs informations de base. Permet de filtrer par différents critères.
+
 **Query parameters**
 
   | Paramètre | Description |
@@ -30,6 +33,9 @@
 **Endpoint**
 
 	GET /api/v1/containers/:name
+
+**Description**
+Récupère les informations détaillées d'un container spécifique.
 
 **Fonctionnalités**
 

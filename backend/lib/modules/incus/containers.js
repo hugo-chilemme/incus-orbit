@@ -173,6 +173,21 @@ export const updateConfig = async (name, config) => {
 	return true;
 };
 
+
+/**
+ * Delete container config keys.
+ * @param {string} name - Container name.
+ * @param {Array<string>} keys - Array of config keys to delete.
+ * @returns {Promise<any>}
+ */
+export const deleteConfigKeys = async (name, keys) => {
+	for (const key of keys) {
+		await execute(`${COMMAND} config unset ${name} ${key}`);
+	}
+	return true;
+};
+
+
 /**
  * Update container devices.
  * @param {string} name - Container name.

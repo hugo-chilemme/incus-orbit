@@ -77,9 +77,9 @@ POST /containers/:name/action
 
 
 # Devices
-- [ ] ajouter device
-- [ ] supprimer device
-- [ ] modifier device
+- [x] ajouter device
+- [x] supprimer device
+- [x] modifier device
 
 
 # Snapshots

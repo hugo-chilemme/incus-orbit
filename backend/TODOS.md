@@ -206,7 +206,7 @@ Récupère la configuration d'un container spécifique.
 
 **Fonctionnalités**
 
--   [ ] récupérer la configuration d'un container
+-   [x] récupérer la configuration d'un container
 
 **Response**
 

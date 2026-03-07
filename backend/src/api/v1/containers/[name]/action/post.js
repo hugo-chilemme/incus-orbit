@@ -54,7 +54,15 @@ function updateDevices(_cName, params, res) {
 
 export default function post(req, res) {
 	const { _cName } = req;
-	const { action, params } = req.query;
+	const action = req.query.action;
+	let params = null;
+	if (req.query.params) {
+		try {
+			params = JSON.parse(req.query.params);
+		} catch (err) {
+			return res.status(400).json({ status: false, message: "Invalid JSON in params" });
+		}
+	}
 
 	let actionPromise;
 
@@ -107,9 +115,9 @@ curl -X POST "http://localhost:9001/api/v1/containers/test-container/action?acti
 curl -X POST "http://localhost:9001/api/v1/containers/test-container/action?action=force-stop"
 curl -X POST "http://localhost:9001/api/v1/containers/test-container/action?action=restart"
 curl -X POST "http://localhost:9001/api/v1/containers/test-container/action?action=pause"
-curl -X POST "http://localhost:9001/api/v1/containers/test-container/action?action=unpause"
+curl -X POST "http://localhost:9001/api/v1/containers/test-container/action?action=resume"
 curl -X POST "http://localhost:9001/api/v1/containers/test-container/action?action=rename&params={\"newName\":\"new-name\"}"
-curl -X POST "http://localhost:9001/api/v1/containers/test-container/action?action=clone&params={\"newName\":\"clone-name\"}"
-curl -X POST "http://localhost:9001/api/v1/containers/test-container/action?action=update-config&params={\"config\":{\"limits.cpu\":\"2\",\"limits.memory\":\"4GB\"}}"
-curl -X POST "http://localhost:9001/api/v1/containers/test-container/action?action=update-devices&params={\"devices\":{\"my-disk\":{\"type\":\"disk\",\"source\":\"/path/on/host\",\"path\":\"/path/in/container\"}}}"
+curl -X POST "http://localhost:9001/api/v1/containers/new-name/action?action=clone&params={\"newName\":\"clone-name\"}"
+curl -X POST "http://localhost:9001/api/v1/containers/new-name/action?action=update-config&params={\"config\":{\"limits.cpu\":\"2\",\"limits.memory\":\"4GB\"}}"
+curl -X POST "http://localhost:9001/api/v1/containers/new-name/action?action=update-devices&params={\"devices\":{\"my-disk\":{\"type\":\"disk\",\"source\":\"/path/on/host\",\"path\":\"/path/in/container\"}}}"
 */

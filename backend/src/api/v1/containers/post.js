@@ -11,8 +11,10 @@ Créer un container avec configuration personnalisée
 export default function post(req, res) {
 	const { name } = req.body;
 	const image = req.body.image || "images:ubuntu/22.04";
+	const config = req.body.config || {};
+	const profile = req.body.profile || "default";
 
-	incus.containers.launch(image, name).then((data) => res.json({ status: true, data }))
+	incus.containers.launch(image, name, profile, config).then((data) => res.json({ status: true, data }))
 		.catch((err) => res.status(500).json({ status: false, message: err.message }));
 }
 

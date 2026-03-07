@@ -236,7 +236,7 @@ Modifie la configuration d'un container spécifique. Permet de mettre à jour un
 | `config`   | Objet JSON contenant les clés de configuration à mettre à jour et leurs nouvelles valeurs - ex: `{ "limits.cpu": "2", "limits.memory": "4GB" }` |
 
 **Fonctionnalités**
--   [ ] modifier la configuration d'un container
+-   [x] modifier la configuration d'un container
 
 **Response**
 
@@ -260,7 +260,7 @@ Supprime une ou plusieurs clés de configuration d'un container spécifique.
 | `keys`   | Tableau de clés de configuration à supprimer - ex: `[ "environment.VAR1", "limits.cpu" ]` |
 
 **Fonctionnalités**
--   [ ] supprimer une ou plusieurs clés de configuration d'un container
+-   [x] supprimer une ou plusieurs clés de configuration d'un container
 
 **Response**
 

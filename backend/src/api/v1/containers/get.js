@@ -11,13 +11,14 @@ import incus from "../../../../lib/modules/incus.js";
  * @param {string} filters.profile - Filter by container profile
  * @returns {Array} Filtered container list
  */
-function filterContainers(data, { name, status, type, profile }) {
+function filterContainers(data, { name, status, type, profile, ip }) {
 	let filtered = data;
 
 	if (name) filtered = filtered.filter((c) => c.name.includes(name));
 	if (status) filtered = filtered.filter((c) => c.status === status);
 	if (type) filtered = filtered.filter((c) => c.type === type);
 	if (profile) filtered = filtered.filter((c) => c.profile === profile);
+	if (ip) filtered = filtered.filter((c) => c.ip?.toString().includes(ip));
 
 	return filtered;
 }
@@ -63,14 +64,13 @@ function sanitizeContainer(container) {
  * - profile
  */
 export default function get(req, res) {
-	const { name, status, type, profile } = req.query;
+	const { name, status, type, profile, ip } = req.query;
 	const containers = incus.containers.list();
 	const containerList = containers.then((data) => data.map(sanitizeContainer));
 
 	return containerList
 		.then((data) => {
-			// Apply filters
-			const filtered = filterContainers(data, { name, status, type, profile });
+			const filtered = filterContainers(data, { name, status, type, profile, ip });
 
 			return res.json({
 				status: true,

@@ -164,10 +164,12 @@ Supprime un container existant. Permet de forcer la suppression si le container 
 Permet d'effectuer différentes actions sur un container (démarrer, arrêter, redémarrer, etc.) et de modifier sa configuration (renommer, cloner, etc.).
 
 **Query parameters**
-| Paramètre | Description |
-|-----------|------------------------------------------------------------------------------------------------------------------------------------------|
-| `action`  | action à effectuer (`start`, `stop`, `restart`, `force-stop`, `pause`, `unpause`, `rename`, `clone`, `update-config`, `update-devices`) |
-| `params`  | paramètres supplémentaires pour l'action (ex: nouveau nom pour `rename`, configuration pour `update-config`, devices pour `update-devices`) |
+
+| Paramètre  | Description                                                                                                                                           |
+|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `action`   | Action à effectuer : <br>• `start`<br>• `stop`<br>• `restart`<br>• `force-stop`<br>• `pause`<br>• `unpause`<br>• `rename`<br>• `clone`<br>• `update-config`<br>• `update-devices` |
+| `params`   | Paramètres supplémentaires selon l'action : <br>• nouveau nom pour `rename`<br>• configuration pour `update-config`<br>• devices pour `update-devices` |
+
 
 
 **Fonctionnalités**

@@ -128,8 +128,31 @@ Crée un nouveau container à partir d'une image ou d'un snapshot, avec un profi
 
 ## Suppression
 
--   [ ] supprimer un container
--   [ ] supprimer un container avec force
+**Endpoint*
+
+	DELETE /api/v1/containers/:name
+
+**Description**
+Supprime un container existant. Permet de forcer la suppression si le container est en cours d'exécution.
+
+**Query parameters**
+
+  | Paramètre | Description |
+  |-----------|---------------------------------------------------|
+  | `force`   | si `true`, force la suppression même si le container est en cours d'exécution |
+
+**Fonctionnalités**
+
+-   [x] supprimer un container
+-   [x] supprimer un container avec force
+
+**Response**
+
+```json
+{
+  "status": true,
+}
+```
 
 ## Autres actions
 

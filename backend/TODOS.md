@@ -88,7 +88,9 @@ Récupère les informations détaillées d'un container spécifique.
 	POST /api/v1/containers
 
 **Description**
-Crée un nouveau container à partir d'une image, d'un snapshot ou d'une configuration personnalisée.
+Crée un nouveau container à partir d'une image ou d'un snapshot, avec un profil et une configuration personnalisée.
+
+**Depracated**: la création à partir d'un snapshot est déplacée dans la section Snapshots.
 
 **Body parameters**
 

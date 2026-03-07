@@ -63,6 +63,24 @@ Récupère les informations détaillées d'un container spécifique.
 -   [x] récupérer la configuration
 -   [x] récupérer les devices
 
+**Response*
+
+```json
+{
+  "status": true,
+  "data": {
+	"name": "my-container",
+	"status": "Running",
+	"type": "container",
+	"profile": "default",
+	"ip": "xx.xx.xx.xx",
+	"config": { ... },
+	"devices": { ... }
+	... (autres infos)
+  }
+}
+```
+
 ## Création
 
 -   [ ] créer un container depuis une image

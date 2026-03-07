@@ -60,8 +60,8 @@ POST /containers/:name/action
 - [x] modifier plusieurs clés
 
 ## Supprimer config
-- [ ] DELETE /containers/:name/config
-- [ ] supprimer plusieurs clés
+- [x] DELETE /containers/:name/config
+- [x] supprimer plusieurs clés
 
 
 # Profils

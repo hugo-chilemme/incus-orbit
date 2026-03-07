@@ -248,10 +248,12 @@ Modifie la configuration d'un container spécifique. Permet de mettre à jour un
 
 ### Supprimer une clé de configuration d'un container
 **Endpoint**
+
 	DELETE /api/v1/containers/:name/config
 
 **Description**
 Supprime une ou plusieurs clés de configuration d'un container spécifique.
+
 **Body parameters**
 | Paramètre | Description                                      |
 |-----------|--------------------------------------------------|

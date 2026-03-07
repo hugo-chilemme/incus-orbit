@@ -238,7 +238,29 @@ Modifie la configuration d'un container spécifique. Permet de mettre à jour un
 **Fonctionnalités**
 -   [ ] modifier la configuration d'un container
 
-**Response*
+**Response**
+
+```json
+{
+  "status": true,
+}
+```
+
+### Supprimer une clé de configuration d'un container
+**Endpoint**
+	DELETE /api/v1/containers/:name/config
+
+**Description**
+Supprime une ou plusieurs clés de configuration d'un container spécifique.
+**Body parameters**
+| Paramètre | Description                                      |
+|-----------|--------------------------------------------------|
+| `keys`   | Tableau de clés de configuration à supprimer - ex: `[ "environment.VAR1", "limits.cpu" ]` |
+
+**Fonctionnalités**
+-   [ ] supprimer une ou plusieurs clés de configuration d'un container
+
+**Response**
 
 ```json
 {

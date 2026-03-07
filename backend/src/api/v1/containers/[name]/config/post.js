@@ -17,7 +17,3 @@ export default async function post(req, res) {
 	}
 }
 
-/* 
-test curl:
-curl -X POST "http://localhost:9001/api/v1/containers/test-container/config" -H "Content-Type: application/json" -d '{"config":{"limits.cpu":"2","limits.memory":"4GB"}}'
-*/

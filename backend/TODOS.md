@@ -95,18 +95,16 @@ Crée un nouveau container à partir d'une image, d'un snapshot ou d'une configu
   | Paramètre   | Description |
   |-------------|---------------------------------------------------|
   | `name`      | nom du container (ex: `my-container`)             |
-  | `source`    | source de création (`image`, `snapshot`, `profile`, `custom`) |
   | `image`     | nom de l'image (ex: `ubuntu:20.04`)              |
-  | `snapshot`   | nom du snapshot (ex: `my-snapshot`)              |
   | `profile`    | nom du profil (ex: `default`)                    |
   | `config`     | configuration personnalisée (objet JSON)         |
 
 **Fonctionnalités**
 
 -   [x] créer un container depuis une image
--   [ ] créer un container depuis un snapshot
--   [ ] créer un container avec un profil
--   [ ] créer un container avec configuration personnalisée
+-   [ ] créer un container depuis un snapshot (moved to snapshots)
+-   [x] créer un container avec un profil
+-   [x] créer un container avec configuration personnalisée
 
 **Response*
 

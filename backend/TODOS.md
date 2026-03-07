@@ -156,8 +156,32 @@ Supprime un container existant. Permet de forcer la suppression si le container 
 
 ## Autres actions
 
+**Endpoint**
+
+	POST /api/v1/containers/:name/action
+
+**Description**
+Permet d'effectuer différentes actions sur un container (démarrer, arrêter, redémarrer, etc.) et de modifier sa configuration (renommer, cloner, etc.).
+
+**Query parameters**
+| Paramètre | Description |
+|-----------|------------------------------------------------------------------------------------------------------------------------------------------|
+| `action`  | action à effectuer (`start`, `stop`, `restart`, `force-stop`, `pause`, `unpause`, `rename`, `clone`, `update-config`, `update-devices`) |
+| `params`  | paramètres supplémentaires pour l'action (ex: nouveau nom pour `rename`, configuration pour `update-config`, devices pour `update-devices`) |
+
+
+**Fonctionnalités**
+
 -   [ ] renommer un container
 -   [ ] cloner un container
+-   [ ] démarrer un container
+-   [ ] arrêter un container
+-   [ ] redémarrer un container
+-   [ ] forcer l'arrêt d'un container
+-   [ ] mettre en pause un container
+-   [ ] reprendre un container
+-   [ ] modifier la configuration d'un container
+-   [ ] modifier les devices d'un container
 
 ------------------------------------------------------------------------
 

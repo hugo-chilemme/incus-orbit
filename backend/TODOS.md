@@ -106,7 +106,7 @@ Crée un nouveau container à partir d'une image, d'un snapshot ou d'une configu
 -   [x] créer un container avec un profil
 -   [x] créer un container avec configuration personnalisée
 
-**Response*
+**Response**
 
 ```json
 {

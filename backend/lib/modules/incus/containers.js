@@ -167,10 +167,10 @@ export const clone = async (name, newName) => {
  * @returns {Promise<any>}
  */
 export const updateConfig = async (name, config) => {
-	const configArgs = Object.entries(config)
-		.map(([key, value]) => `--config ${key}=${value}`)
-		.join(" ");
-	return execute(`${COMMAND} config set ${name} ${configArgs}`);
+	for (const [key, value] of Object.entries(config)) {
+		await execute(`${COMMAND} config set ${name} ${key} ${value}`);
+	}
+	return true;
 };
 
 /**

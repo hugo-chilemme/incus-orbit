@@ -27,7 +27,7 @@
 
 ## Informations
 
-**Endpoint*
+**Endpoint**
 
 	GET /api/v1/containers/:name
 

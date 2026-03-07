@@ -108,7 +108,7 @@ export const state = async (name) => {
  * @returns {Promise<object>} Resource usage statistics.
  */
 export const stats = async (name) => {
-	return execute(`${COMMAND} info ${name} --resources --format json`);
+	return execute(`${COMMAND} query /1.0/instances/${name}/state`);
 };
 
 

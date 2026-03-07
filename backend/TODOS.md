@@ -128,7 +128,7 @@ Crée un nouveau container à partir d'une image ou d'un snapshot, avec un profi
 
 ## Suppression
 
-**Endpoint*
+**Endpoint**
 
 	DELETE /api/v1/containers/:name
 

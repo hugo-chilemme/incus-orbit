@@ -29,8 +29,8 @@ export const info = async (name) => {
  * @returns {Promise<object>} Information about the created container.
  */
 export const launch = async (image, name) => {
-	await execute(`${COMMAND} create images:${image} ${name}`);
-	return getInfo(name);
+	await execute(`${COMMAND} launch ${image} ${name}`);
+	return info(name);
 };
 
 

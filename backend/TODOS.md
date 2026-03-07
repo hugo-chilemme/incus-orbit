@@ -222,6 +222,30 @@ Récupère la configuration d'un container spécifique.
 }
 ```
 
+### Modifier la configuration d'un container
+**Endpoint**
+
+	POST /api/v1/containers/:name/config
+
+**Description**
+Modifie la configuration d'un container spécifique. Permet de mettre à jour une ou plusieurs clés de configuration en une seule requête.
+
+**Body parameters**
+| Paramètre | Description                                      |
+|-----------|--------------------------------------------------|
+| `config`   | Objet JSON contenant les clés de configuration à mettre à jour et leurs nouvelles valeurs - ex: `{ "limits.cpu": "2", "limits.memory": "4GB" }` |
+
+**Fonctionnalités**
+-   [ ] modifier la configuration d'un container
+
+**Response*
+
+```json
+{
+  "status": true,
+}
+```
+
 ## Profils
 
 -   [ ] ajouter un profil

@@ -174,15 +174,15 @@ Permet d'effectuer différentes actions sur un container (démarrer, arrêter, r
 
 **Fonctionnalités**
 
--   [ ] renommer un container
--   [ ] cloner un container
+-   [x] renommer un container
+-   [x] cloner un container
 -   [x] démarrer un container
 -   [x] arrêter un container
 -   [x] redémarrer un container
 -   [x] forcer l'arrêt d'un container
 -   [x] mettre en pause un container
 -   [x] reprendre un container
--   [ ] modifier la configuration d'un container
+-   [x] modifier la configuration d'un container
 -   [ ] modifier les devices d'un container
 
 ------------------------------------------------------------------------

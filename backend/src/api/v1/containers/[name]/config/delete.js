@@ -38,8 +38,3 @@ export default async function del(req, res) {
 		res.status(500).json({ status: false, message: "Failed to delete container configuration keys" });
 	}
 }
-
-/*
-test curl:
-curl -X DELETE "http://localhost:9001/api/v1/containers/new-name/config" -H "Content-Type: application/json" -d '{"keys":["limits.cpu","limits.memory"]}'
-*/

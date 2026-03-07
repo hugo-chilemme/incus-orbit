@@ -108,16 +108,3 @@ export default function post(req, res) {
 		.catch((err) => res.status(500).json({ status: false, message: err.message }));
 }
 
-/* 
-test curl:
-curl -X POST "http://localhost:9001/api/v1/containers/test-container/action?action=start"
-curl -X POST "http://localhost:9001/api/v1/containers/test-container/action?action=stop"
-curl -X POST "http://localhost:9001/api/v1/containers/test-container/action?action=force-stop"
-curl -X POST "http://localhost:9001/api/v1/containers/test-container/action?action=restart"
-curl -X POST "http://localhost:9001/api/v1/containers/test-container/action?action=pause"
-curl -X POST "http://localhost:9001/api/v1/containers/test-container/action?action=resume"
-curl -X POST "http://localhost:9001/api/v1/containers/test-container/action?action=rename&params={\"newName\":\"new-name\"}"
-curl -X POST "http://localhost:9001/api/v1/containers/new-name/action?action=clone&params={\"newName\":\"clone-name\"}"
-curl -X POST "http://localhost:9001/api/v1/containers/new-name/action?action=update-config&params={\"config\":{\"limits.cpu\":\"2\",\"limits.memory\":\"4GB\"}}"
-curl -X POST "http://localhost:9001/api/v1/containers/new-name/action?action=update-devices&params={\"devices\":{\"my-disk\":{\"type\":\"disk\",\"source\":\"/path/on/host\",\"path\":\"/path/in/container\"}}}"
-*/

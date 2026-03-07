@@ -106,16 +106,14 @@ POST /containers/:name/action
 
 # Monitoring
 
-## Stats
-- [ ] CPU usage
-- [ ] RAM usage
-- [ ] network usage
-- [ ] disk usage
-
 ## State
-- [ ] état container
-- [ ] PID
-- [ ] uptime
+- [x] état container
+- [x] PID
+- [x] uptime
+- [x] CPU usage
+- [x] RAM usage
+- [x] network usage
+- [ ] disk usage (bad implement in my side, need to be fixed)
 
 ## Logs
 - [ ] logs container

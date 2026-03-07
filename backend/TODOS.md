@@ -18,47 +18,47 @@
 
 **Fonctionnalités**
 
--   [x] lister les containers\
--   [x] filtrer par nom\
--   [x] filtrer par statut\
--   [x] filtrer par profil\
--   [x] filtrer par type\
+-   [x] lister les containers
+-   [x] filtrer par nom
+-   [x] filtrer par statut
+-   [x] filtrer par profil
+-   [x] filtrer par type
 -   [x] filtrer par adresse IP
 
 ## Informations
 
--   [ ] récupérer les informations d'un container\
--   [ ] récupérer l'état (Running / Stopped)\
--   [ ] récupérer l'adresse IP\
--   [ ] récupérer la configuration\
+-   [ ] récupérer les informations d'un container
+-   [ ] récupérer l'état (Running / Stopped)
+-   [ ] récupérer l'adresse IP
+-   [ ] récupérer la configuration
 -   [ ] récupérer les devices
 
 ## Création
 
--   [ ] créer un container depuis une image\
--   [ ] créer un container depuis un snapshot\
--   [ ] créer un container avec un profil\
+-   [ ] créer un container depuis une image
+-   [ ] créer un container depuis un snapshot
+-   [ ] créer un container avec un profil
 -   [ ] créer un container avec configuration personnalisée
 
 ## Suppression
 
--   [ ] supprimer un container\
+-   [ ] supprimer un container
 -   [ ] supprimer un container avec force
 
 ## Autres actions
 
--   [ ] renommer un container\
+-   [ ] renommer un container
 -   [ ] cloner un container
 
 ------------------------------------------------------------------------
 
 # Lifecycle Container
 
--   [ ] démarrer un container\
--   [ ] arrêter un container\
--   [ ] redémarrer un container\
--   [ ] forcer l'arrêt d'un container\
--   [ ] mettre en pause un container\
+-   [ ] démarrer un container
+-   [ ] arrêter un container
+-   [ ] redémarrer un container
+-   [ ] forcer l'arrêt d'un container
+-   [ ] mettre en pause un container
 -   [ ] reprendre un container
 
 ------------------------------------------------------------------------
@@ -67,48 +67,48 @@
 
 ## Configuration
 
--   [ ] modifier une configuration\
--   [ ] ajouter une configuration\
+-   [ ] modifier une configuration
+-   [ ] ajouter une configuration
 -   [ ] supprimer une configuration
 
 ## Profils
 
--   [ ] ajouter un profil\
--   [ ] retirer un profil\
+-   [ ] ajouter un profil
+-   [ ] retirer un profil
 -   [ ] modifier les profils
 
 ## Devices
 
--   [ ] ajouter un device\
--   [ ] supprimer un device\
+-   [ ] ajouter un device
+-   [ ] supprimer un device
 -   [ ] modifier un device
 
 ------------------------------------------------------------------------
 
 # Snapshots
 
--   [ ] lister les snapshots\
--   [ ] créer un snapshot\
--   [ ] restaurer un snapshot\
--   [ ] supprimer un snapshot\
+-   [ ] lister les snapshots
+-   [ ] créer un snapshot
+-   [ ] restaurer un snapshot
+-   [ ] supprimer un snapshot
 -   [ ] renommer un snapshot
 
 ------------------------------------------------------------------------
 
 # Terminal / Exec
 
--   [ ] exécuter une commande dans le container\
--   [ ] ouvrir un shell\
+-   [ ] exécuter une commande dans le container
+-   [ ] ouvrir un shell
 -   [ ] exécuter un script
 
 ------------------------------------------------------------------------
 
 # Gestion des fichiers
 
--   [ ] upload fichier\
--   [ ] download fichier\
--   [ ] supprimer fichier\
--   [ ] créer dossier\
+-   [ ] upload fichier
+-   [ ] download fichier
+-   [ ] supprimer fichier
+-   [ ] créer dossier
 -   [ ] modifier permissions
 
 ------------------------------------------------------------------------
@@ -117,38 +117,38 @@
 
 ## Statistiques
 
--   [ ] utilisation CPU\
--   [ ] utilisation RAM\
--   [ ] utilisation réseau\
+-   [ ] utilisation CPU
+-   [ ] utilisation RAM
+-   [ ] utilisation réseau
 -   [ ] utilisation disque
 
 ## État
 
--   [ ] état du container\
--   [ ] PID du container\
+-   [ ] état du container
+-   [ ] PID du container
 -   [ ] uptime du container
 
 ## Logs
 
--   [ ] logs container\
+-   [ ] logs container
 -   [ ] logs erreur
 
 ------------------------------------------------------------------------
 
 # Images
 
--   [ ] lister les images\
--   [ ] importer une image\
--   [ ] supprimer une image\
+-   [ ] lister les images
+-   [ ] importer une image
+-   [ ] supprimer une image
 -   [ ] exporter une image
 
 ------------------------------------------------------------------------
 
 # Networks
 
--   [ ] lister les réseaux\
--   [ ] voir un réseau\
--   [ ] créer un réseau\
+-   [ ] lister les réseaux
+-   [ ] voir un réseau
+-   [ ] créer un réseau
 -   [ ] supprimer un réseau
 
 ------------------------------------------------------------------------
@@ -157,24 +157,24 @@
 
 ## Storage Pools
 
--   [ ] lister les pools\
--   [ ] voir un pool\
--   [ ] créer un pool\
+-   [ ] lister les pools
+-   [ ] voir un pool
+-   [ ] créer un pool
 -   [ ] supprimer un pool
 
 ## Volumes
 
--   [ ] lister les volumes\
--   [ ] créer un volume\
+-   [ ] lister les volumes
+-   [ ] créer un volume
 -   [ ] supprimer un volume
 
 ------------------------------------------------------------------------
 
 # Serveur
 
--   [ ] informations du serveur Incus\
--   [ ] ressources CPU\
--   [ ] ressources mémoire\
+-   [ ] informations du serveur Incus
+-   [ ] ressources CPU
+-   [ ] ressources mémoire
 -   [ ] stockage total
 
 ------------------------------------------------------------------------

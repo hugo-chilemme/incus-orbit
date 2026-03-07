@@ -167,7 +167,7 @@ Permet d'effectuer différentes actions sur un container (démarrer, arrêter, r
 
 | Paramètre  | Description                                                                                                                                           |
 |------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `action`   | Action à effectuer : <br>• `start`<br>• `stop`<br>• `restart`<br>• `force-stop`<br>• `pause`<br>• `unpause`<br>• `rename`<br>• `clone`<br>• `update-config`<br>• `update-devices` |
+| `action`   | Action à effectuer : <br>• `start`<br>• `stop`<br>• `restart`<br>• `force-stop`<br>• `pause`<br>• `resume`<br>• `rename`<br>• `clone`<br>• `update-config`<br>• `update-devices` |
 | `params`  | paramètres supplémentaires pour l'action (ex: nouveau nom pour `rename`, configuration pour `update-config`, devices pour `update-devices`) |
 
 
@@ -176,12 +176,12 @@ Permet d'effectuer différentes actions sur un container (démarrer, arrêter, r
 
 -   [ ] renommer un container
 -   [ ] cloner un container
--   [ ] démarrer un container
--   [ ] arrêter un container
--   [ ] redémarrer un container
--   [ ] forcer l'arrêt d'un container
--   [ ] mettre en pause un container
--   [ ] reprendre un container
+-   [x] démarrer un container
+-   [x] arrêter un container
+-   [x] redémarrer un container
+-   [x] forcer l'arrêt d'un container
+-   [x] mettre en pause un container
+-   [x] reprendre un container
 -   [ ] modifier la configuration d'un container
 -   [ ] modifier les devices d'un container
 

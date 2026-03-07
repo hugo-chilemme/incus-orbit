@@ -47,6 +47,7 @@ export async function loadRoutes(app, baseDir, baseUrl = '/api') {
       const layoutPath = path.join(dir, 'layout.js');
       const layoutMiddleware = await importModule(layoutPath);
       activeMiddlewares = [...activeMiddlewares, layoutMiddleware];
+      console.log(`[autoLoader] Loaded layout middleware: ${layoutPath} for path: ${urlPath || '/'}`);
       router.use(urlPath || '/', ...activeMiddlewares);
     }
 
@@ -62,6 +63,7 @@ export async function loadRoutes(app, baseDir, baseUrl = '/api') {
         throw new TypeError(`Expected function export in ${routePath} for ${method.toUpperCase()}.`);
       }
 
+      console.log(`[autoLoader] Registering route [${method.toUpperCase()}] ${baseUrl}${urlPath || '/'} `);
       router[method](urlPath || '/', ...activeMiddlewares, methodHandler);
     }
 
@@ -75,4 +77,5 @@ export async function loadRoutes(app, baseDir, baseUrl = '/api') {
 
   await scan(baseDir, '');
   app.use(baseUrl, router);
+  console.log(`[autoLoader] All routes loaded under base URL: ${baseUrl}`);
 }

@@ -191,9 +191,32 @@ Permet d'effectuer différentes actions sur un container (démarrer, arrêter, r
 
 ## Configuration
 
+**Endpoint**
+
+	GET /api/v1/containers/:name/config
+
+**Description**
+Récupère la configuration d'un container spécifique.
+
+**Fonctionnalités**
+
 -   [ ] modifier une configuration
 -   [ ] ajouter une configuration
 -   [ ] supprimer une configuration
+
+**Response**
+
+```json
+{
+  "status": true,
+  "data": {
+	"limits.cpu": "2",
+	"limits.memory": "4GB",
+	"environment.VAR1": "value1",
+	...
+  }
+}
+```
 
 ## Profils
 

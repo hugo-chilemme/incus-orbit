@@ -84,10 +84,10 @@ POST /containers/:name/action
 
 # Snapshots
 - [x] lister snapshots
-- [ ] créer snapshot
-- [ ] restaurer snapshot
-- [ ] supprimer snapshot
-- [ ] renommer snapshot
+- [x] créer snapshot
+- [x] restaurer snapshot
+- [x] supprimer snapshot
+- [ ] renommer snapshot (not implemented in Incus API)
 
 
 # Exec

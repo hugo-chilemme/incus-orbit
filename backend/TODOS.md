@@ -83,7 +83,7 @@ POST /containers/:name/action
 
 
 # Snapshots
-- [ ] lister snapshots
+- [x] lister snapshots
 - [ ] créer snapshot
 - [ ] restaurer snapshot
 - [ ] supprimer snapshot

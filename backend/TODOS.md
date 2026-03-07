@@ -28,6 +28,24 @@ Récupère la liste des containers avec leurs informations de base. Permet de fi
 -   [x] filtrer par type
 -   [x] filtrer par adresse IP
 
+**Response**
+
+```json
+{
+  "status": true,
+  "data": [
+	{
+	  "name": "my-container",
+	  "status": "Running",
+	  "type": "container",
+	  "profile": "default",
+	  "ip": "xx.xx.xx.xx"
+	},
+	...
+  ]
+}
+```
+
 ## Informations
 
 **Endpoint**

@@ -183,7 +183,7 @@ Permet d'effectuer différentes actions sur un container (démarrer, arrêter, r
 -   [x] mettre en pause un container
 -   [x] reprendre un container
 -   [x] modifier la configuration d'un container
--   [ ] modifier les devices d'un container
+-   [ ] modifier les devices d'un container (not implemented yet)
 
 ------------------------------------------------------------------------
 

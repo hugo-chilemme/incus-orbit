@@ -198,11 +198,15 @@ Permet d'effectuer différentes actions sur un container (démarrer, arrêter, r
 **Description**
 Récupère la configuration d'un container spécifique.
 
+**Query parameters**
+
+| Paramètre | Description                                      |
+|-----------|--------------------------------------------------|
+| `key`     | Filtrer par clé de configuration (optionnel) - ex: `limits` pour récupérer toutes les limites du container     |
+
 **Fonctionnalités**
 
--   [ ] modifier une configuration
--   [ ] ajouter une configuration
--   [ ] supprimer une configuration
+-   [ ] récupérer la configuration d'un container
 
 **Response**
 

@@ -66,8 +66,9 @@ export const logs = async (name) => {
  * @param {string} name - Container name.
  * @returns {Promise<any>}
  */
-export const remove = async (name) => {
-	return execute(`${COMMAND} delete ${name}`);
+export const remove = async (name, force = false) => {
+	console.log(`${COMMAND} delete ${name} ${force && "--force"}`);
+	return execute(`${COMMAND} delete ${name} ${force && "--force"}`);
 };
 
 

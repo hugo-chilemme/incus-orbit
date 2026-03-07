@@ -18,7 +18,7 @@ export const exec = async (name, command) => {
  * @returns {Promise<object>} Container information in JSON format.
  */
 export const info = async (name) => {
-	return execute(`${COMMAND} info ${name} --format json`);
+	return execute(`${COMMAND} query /1.0/instances/${name}`);
 };
 
 

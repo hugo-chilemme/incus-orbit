@@ -27,11 +27,17 @@
 
 ## Informations
 
--   [ ] récupérer les informations d'un container
--   [ ] récupérer l'état (Running / Stopped)
--   [ ] récupérer l'adresse IP
--   [ ] récupérer la configuration
--   [ ] récupérer les devices
+**Endpoint*
+
+	GET /api/v1/containers/:name
+
+**Fonctionnalités**
+
+-   [x] récupérer les informations d'un container
+-   [x] récupérer l'état (Running / Stopped)
+-   [x] récupérer l'adresse IP
+-   [x] récupérer la configuration
+-   [x] récupérer les devices
 
 ## Création
 

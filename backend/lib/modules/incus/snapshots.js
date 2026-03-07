@@ -18,7 +18,7 @@ export const list = async (container) => {
  * @returns {Promise<object>} Snapshot metadata and configuration.
  */
 export const get = async (container, snapshot) => {
-	return execute(`${COMMAND} snapshot show ${container}/${snapshot} --format json`);
+	return execute(`${COMMAND} query /1.0/instances/${container}/snapshots/${snapshot}`);
 };
 
 
@@ -28,8 +28,9 @@ export const get = async (container, snapshot) => {
  * @param {string} snapshot - Snapshot name to create.
  * @returns {Promise<any>}
  */
-export const create = async (container, snapshot) => {
-	return execute(`${COMMAND} snapshot create ${container}/${snapshot}`);
+export const create = async (container) => {
+	const snapshot = `${Date.now()}`;
+	return execute(`${COMMAND} snapshot create ${container} ${snapshot}`);
 };
 
 
@@ -40,7 +41,7 @@ export const create = async (container, snapshot) => {
  * @returns {Promise<any>}
  */
 export const remove = async (container, snapshot) => {
-	return execute(`${COMMAND} snapshot delete ${container}/${snapshot}`);
+	return execute(`${COMMAND} snapshot delete ${container} ${snapshot}`);
 };
 
 
@@ -50,6 +51,6 @@ export const remove = async (container, snapshot) => {
  * @param {string} snapshot - Snapshot name to restore.
  * @returns {Promise<any>}
  */
-export const restoreSnapshot = async (container, snapshot) => {
-	return execute(`${COMMAND} snapshot restore ${container}/${snapshot}`);
+export const restore = async (container, snapshot) => {
+	return execute(`${COMMAND} snapshot restore ${container} ${snapshot}`);
 };

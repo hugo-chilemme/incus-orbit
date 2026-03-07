@@ -63,7 +63,7 @@ Récupère les informations détaillées d'un container spécifique.
 -   [x] récupérer la configuration
 -   [x] récupérer les devices
 
-**Response*
+**Response**
 
 ```json
 {
@@ -83,10 +83,48 @@ Récupère les informations détaillées d'un container spécifique.
 
 ## Création
 
--   [ ] créer un container depuis une image
+**Endpoint**
+
+	POST /api/v1/containers
+
+**Description**
+Crée un nouveau container à partir d'une image, d'un snapshot ou d'une configuration personnalisée.
+
+**Body parameters**
+
+  | Paramètre   | Description |
+  |-------------|---------------------------------------------------|
+  | `name`      | nom du container (ex: `my-container`)             |
+  | `source`    | source de création (`image`, `snapshot`, `profile`, `custom`) |
+  | `image`     | nom de l'image (ex: `ubuntu:20.04`)              |
+  | `snapshot`   | nom du snapshot (ex: `my-snapshot`)              |
+  | `profile`    | nom du profil (ex: `default`)                    |
+  | `config`     | configuration personnalisée (objet JSON)         |
+
+**Fonctionnalités**
+
+-   [x] créer un container depuis une image
 -   [ ] créer un container depuis un snapshot
 -   [ ] créer un container avec un profil
 -   [ ] créer un container avec configuration personnalisée
+
+**Response*
+
+```json
+{
+  "status": true,
+  "data": {
+	"name": "my-container",
+	"status": "Stopped",
+	"type": "container",
+	"profile": "default",
+	"ip": null,
+	"config": { ... },
+	"devices": { ... }
+	... (autres infos)
+  }
+}
+```
 
 ## Suppression
 

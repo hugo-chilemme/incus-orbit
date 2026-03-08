@@ -60,7 +60,23 @@ async function apiRequest<T>({
 
 	const response = await fetch(fullUrl, requestInit);
 
-	if (!response.ok) throw new Error(response.statusText);
+	if (!response.ok) {
+		let errorText: any;
+		const contentType = response.headers.get('content-type');
+		if (contentType && contentType.includes('application/json')) {
+			try {
+				errorText = await response.json();
+			} catch {
+				errorText = await response.text();
+			}
+		} else {
+			errorText = await response.text();
+		}
+		throw new Error(
+			(errorText && (errorText.message || errorText.error || errorText.toString())) ||
+			response.statusText
+		);
+	}
 
 	const contentType = response.headers.get('content-type');
 	if (contentType && contentType.includes('application/json')) {

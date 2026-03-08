@@ -9,14 +9,17 @@ import {
   DropdownMenuSeparator
 } from "@/components/ui/dropdown-menu"
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
-import { MoreHorizontal, Star, Pencil, Menu, Ellipsis, GalleryHorizontalEnd } from "lucide-react"
+
+import { MoreHorizontal, Star, Pencil, Menu, Ellipsis, GalleryHorizontalEnd, LoaderCircle } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
 
 
 function renderItem(title, href) {
+  const router = useRouter();
   return (
-    <Button variant="ghost" key={title}>
+    <Button variant="ghost" key={title} onClick={() => router.push(href)}>
       {title}
     </Button>
   )
@@ -34,30 +37,25 @@ export default function ProjectHeader() {
       
       {/* Left */}
       <div className="flex items-center text-black dark:text-white ">
+        
         {navbars.map((item) => renderItem(item.title, item.href))}
       </div>
 
       {/* Right */}
       <div className="flex items-center gap-2">
 
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="icon">
-            </Button>
-          </DropdownMenuTrigger>
+        {/* <div className="h-7 rounded-md hover:bg-neutral-900 flex items-center justify-center relative gap-4 text-xs">
+          <div className="relative">
+            <LoaderCircle size={32} className="animate-spin text-indigo-500/75" />
+            <span className="absolute top-0 w-full h-full flex items-center justify-center text-xs">
+              2
+            </span>
+          </div>
+        </div> */}
 
-          <DropdownMenuContent align="end" className="w-40">
-            <DropdownMenuItem className="text-red-500">
-              Se déconnecter
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-
-        <Separator orientation="vertical"/>
-
-       <Button variant="default" size="sm">
+       {/* <Button variant="default" size="sm">
           <GalleryHorizontalEnd size={14} /> Nouveau serveur
-        </Button>
+        </Button> */}
       </div>
 
     </div>

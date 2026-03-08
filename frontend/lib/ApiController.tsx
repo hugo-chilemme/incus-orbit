@@ -60,7 +60,7 @@ async function apiRequest<T>({
 
 	const response = await fetch(fullUrl, requestInit);
 
-	if (!response.ok) return { status: false, message: `Une erreur interne est survenue (code ${response.status})` } as unknown as T;
+	if (!response.ok) throw new Error(response.statusText);
 
 	const contentType = response.headers.get('content-type');
 	if (contentType && contentType.includes('application/json')) {

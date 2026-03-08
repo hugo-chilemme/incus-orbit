@@ -85,17 +85,19 @@ export default function Home() {
 					<Loader2 className="animate-spin" size={24} />
 				</div>
 			) : (
-				<div className="space-y-2">
-					<div className="w-full p-4 border border-neutral-800 rounded-md grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 items-center bg-neutral-900 font-semibold">
-						<span>Name</span>
+				<div className="space-y-1">
+					<div className="w-full p-4 px-6 border border-neutral-800 rounded-md grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 items-center bg-neutral-900 font-medium gap-4 text-sm text-neutral-400">
+						<span className="col-span-2">Name</span>
 						<span>Status</span>
 						<span>IP</span>
 						<span>Profile</span>
 						<span className="text-right">Actions</span>
 					</div>
 					{containers.map((container) => (
-						<div className="w-full p-4 border border-neutral-900 rounded-md grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 items-center text-neutral-500" key={container.name}>
-							<h2 className="font-medium text-neutral-300">{container.name}</h2>
+						<div className="w-full p-1 border border-neutral-900 rounded-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 items-center text-neutral-500 gap-4" key={container.name}>
+							<div className="p-3 col-span-2 hover:bg-neutral-900 rounded-md flex items-center gap-4">
+								<h2 className="font-medium text-neutral-300 w-full">{container.name}</h2>
+							</div>
 							<div>
 								<StatusBlock status={container.status} />
 							</div>

@@ -91,7 +91,7 @@ POST /containers/:name/action
 
 
 # Exec
-- [ ] exécuter commande
+- [x] exécuter commande
 - [ ] ouvrir shell
 - [ ] exécuter script
 

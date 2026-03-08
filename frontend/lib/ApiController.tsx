@@ -26,12 +26,13 @@ async function apiRequest<T>({
 	const baseURL = options.baseURL || process.env.NEXT_PUBLIC_API_BASE_URL || "";
 	let headers: Record<string, string> = { ...(options.headers || {}) };
 
+	console.log(method, url, data, params, extraHeaders, options);
 	const accessToken = typeof window !== "undefined" ? localStorage.getItem('accessToken') : null;
 	if (accessToken) {
 		headers['Authorization'] = `Bearer ${accessToken}`;
 	}
 
-	let fullUrl = url.startsWith('http')
+	let fullUrl = url?.startsWith('http')
 		? url
 		: baseURL
 			? `${baseURL.replace(/\/$/, '')}/${url.replace(/^\//, '')}`

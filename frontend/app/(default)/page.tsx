@@ -217,9 +217,9 @@ function renderContainer(
 			className="w-full p-1 pr-4 border border-neutral-900 rounded-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 items-center text-neutral-500 gap-4"
 			key={container.name}
 		>
-			<div className="p-3 col-span-2 hover:bg-neutral-900 rounded-md flex items-center gap-4">
+			<Link href={`/containers/${container.name}`} className="p-3 col-span-2 hover:bg-neutral-900 rounded-md flex items-center gap-4">
 				<h2 className="font-medium text-neutral-300 w-full">{container.name}</h2>
-			</div>
+			</Link>
 			<div>
 				<StatusBlock status={container.status} />
 			</div>

@@ -208,13 +208,3 @@ export const updateDevices = async (name, devices) => {
 	return execute(`${COMMAND} ${deviceArgs}`);
 };
 
-
-/**
- * Execute a command inside a container.
- * @param {string} name - Container name.
- * @param {string} command - Command to execute inside the container.
- * @returns {Promise<any>} Command output.
- */
-export const exec = async (name, command) => {
-	return await execute(`${COMMAND} exec ${name} -- ${command}`);
-};

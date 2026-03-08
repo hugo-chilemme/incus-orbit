@@ -54,11 +54,11 @@ function updateDevices(_cName, params, res) {
 
 export default function post(req, res) {
 	const { _cName } = req;
-	const action = req.query.action;
+	const action = req.body.action;
 	let params = null;
-	if (req.query.params) {
+	if (req.body.params) {
 		try {
-			params = JSON.parse(req.query.params);
+			params = JSON.parse(req.body.params);
 		} catch (err) {
 			return res.status(400).json({ status: false, message: "Invalid JSON in params" });
 		}

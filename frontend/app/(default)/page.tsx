@@ -26,6 +26,7 @@ import {
 export default function Home() {
 	const [containers, setContainers] = useState([]);
 	const [loading, setLoading] = useState(true);
+	const [errorMessage, setErrorMessage] = useState("");
 
 
 	async function getContainers () {
@@ -68,11 +69,30 @@ export default function Home() {
 				method: "POST",
 				url: `/containers/${containerName}/action`,
 				data: { action },
-			}).then(getContainers),
+			}).catch((error) => {
+				// Ensure errors are thrown so toast.promise can catch them
+				throw error?.response?.data?.message || error?.message || "Unknown error";
+			}),
 			{
 				loading: `${statusMap[action]} ${containerName}...`,
-				success: `${containerName} ${successMap[action]} successfully!`,
-				error: `Failed to ${action} ${containerName}.`,
+				success: () => {
+					getContainers();
+					return `${containerName} ${successMap[action]} successfully!`;
+				},
+				error: (message) => {
+					setContainers((prev) =>
+						prev.map((container) =>
+							container.name === containerName
+								? { ...container, status: "Failed" }
+								: container
+						)
+					);
+					setErrorMessage({
+						title: `Failed to ${action} ${containerName}`,
+						description: message || `An error occurred while trying to ${action} ${containerName}. Please try again later.`,
+					});
+					return `Failed to ${action} ${containerName}.`;
+				},
 			}
 		);
 	};
@@ -86,6 +106,12 @@ export default function Home() {
 				</div>
 			) : (
 				<div className="space-y-1">
+					{errorMessage && (
+						<div className="w-full p-4 border border-red-800 rounded-md bg-red-900/20 text-red-300">
+							<h2 className="font-semibold">{errorMessage.title}</h2>
+							<p>{errorMessage.description}</p>
+						</div>
+					)}
 					<div className="w-full p-4 px-6 border border-neutral-800 rounded-md grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 items-center bg-neutral-900 font-medium gap-4 text-sm text-neutral-400">
 						<span className="col-span-2">Name</span>
 						<span>Status</span>
@@ -94,7 +120,7 @@ export default function Home() {
 						<span className="text-right">Actions</span>
 					</div>
 					{containers.map((container) => (
-						<div className="w-full p-1 border border-neutral-900 rounded-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 items-center text-neutral-500 gap-4" key={container.name}>
+						<div className="w-full p-1 pr-4 border border-neutral-900 rounded-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 items-center text-neutral-500 gap-4" key={container.name}>
 							<div className="p-3 col-span-2 hover:bg-neutral-900 rounded-md flex items-center gap-4">
 								<h2 className="font-medium text-neutral-300 w-full">{container.name}</h2>
 							</div>

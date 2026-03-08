@@ -7,8 +7,8 @@ import "./globals.css";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 export const metadata: Metadata = {
-  title: "Magic UI",
-  description: "The startup template from Magic UI",
+  title: "Incus Orbit",
+  description: "A web-based control panel for LXC containers, built with Next.js and Tailwind CSS.",
 };
 
 export default function RootLayout({
